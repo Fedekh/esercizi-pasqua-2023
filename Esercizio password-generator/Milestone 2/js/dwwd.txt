@@ -1,0 +1,44 @@
+generaPassword() {
+      this.passwordGenerata = "";   //reset a priori del campo input
+     
+        if (this.sino===false) {
+          for (let i = 0; i < this.lunghezzaPassword; i++) {
+            let nuovoCarattere;                 //variabile d'appoggio
+            do {
+              nuovoCarattere = this.generaNumeroRandomico();    //sovrascrivo di continuo finche ci sono doppioni
+            } while (this.caratteriUnici.includes(nuovoCarattere));
+            this.caratteriUnici.push(nuovoCarattere);                //lo pusho solo se non è doppione
+            if (nuovoCarattere < 10) {   // servirebbe a distinguere i numeri 0-9 dai valori unicode espressi anch essi in numeri
+              this.passwordGenerata += nuovoCarattere;
+            } else {
+              this.passwordGenerata += String.fromCharCode(nuovoCarattere);
+            }
+          }
+        } else {
+          for (let i = 0; i < this.lunghezzaPassword; i++) {
+            const valoreUnicode = this.generaNumeroRandomico();
+            if (valoreUnicode < 10) {
+              this.passwordGenerata += valoreUnicode;
+            } else {
+              this.passwordGenerata += String.fromCharCode(valoreUnicode);
+            }
+          }
+        }
+        console.log(`La password generata è : ${this.passwordGenerata}`);
+        this.passwordGenerata = this.passwordGenerata.join("");   //levo ogni spazio tra i caratteri della stringa
+        this.lunghezzaPassword = "";                              //reset input
+      
+    }
+    data() {
+    return {
+      lunghezzaPassword: "",
+      passwordGenerata: "",
+      valido: false,          // flag per vede se l input è valido o meno
+      sino: null,             //collegati alle scelte si  o no collegato al value di input radio
+      lettere: false,
+      numeri: false,
+      simboli: false,         //collegati alla tipologia di password
+      isChecked: null,       //mi serve per dare dinamicamente il checked ai checkbox
+      caratteriUnici: []              //array per inserire dentro tutti i caratteri e evitare i doppioni
+    }
+  }

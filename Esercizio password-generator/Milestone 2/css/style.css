@@ -55,11 +55,12 @@
     flex-direction: column;
     justify-content: space-start;
     gap: 20px;
+    position: relative;
   }
 
   .choise {    
-      position: fixed;  
-      bottom: 20%; 
+      position: absolute;  
+      bottom: 70px; 
       /* cosi alla comparsa della password il contenitore non si sposta */
   }
   

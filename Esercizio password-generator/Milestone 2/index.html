@@ -53,13 +53,13 @@
                             <div class="ripetizioni d-flex flex-column">
                                 <div class="yes">
                                 <label for="yes">Si</label>
-                                <input v-model="si" type="radio" name="scelta" id="yes" value="si" >
+                                <input @click="click" v-model="sino" type="radio" style="margin-left: 13px;" name="scelta" id="yes" value='true'>
                                 </div>
                                 <!--entrambi gli input avranno lo stesso nome "ripetizioni", ma valori diversi: "si" per il primo input e "no" per il secondo input.
                                  in questo modo, quando uno dei due radio button viene selezionato, l'altro diventa automaticamente deselezionato.-->
                                 <div class="no">
                                     <label for="no">No</label>
-                                    <input v-model="no" type="radio" name="scelta" id="no" value="no">
+                                    <input @click="click" v-model="sino" type="radio" style="margin-left: 5px;" name="scelta" id="no" value='false'>
                                 </div>
                             </div>
                               

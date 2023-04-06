@@ -11,15 +11,13 @@ createApp({
       lunghezzaPassword: "",
       passwordGenerata: "",
       valido: false,          // flag per vede se l input è valido o meno
-      si: false,
-      no: false,             //collegati alle scelte si  o no
+      sino: null,             //collegati alle scelte si  o no collegato al value di input radio
       lettere: false,
       numeri: false,
       simboli: false,         //collegati alla tipologia di password
-      isChecked: null
+      isChecked: null,       //mi serve per dare dinamicamente il checked ai checkbox
     }
   },
-
   methods: {
     click(scelta) {    //mi seleziona o deseleziona i checkbox
       this.scelta = !this.scelta
@@ -55,37 +53,49 @@ createApp({
           return lettera
         }
       }
-      // return Math.random() < 0.5 ? numero : randomUnicode;
     },
 
     generaPassword() {
       this.passwordGenerata = "";   //reset a priori del campo input
+      let caratteriUnici = [];
       if (this.lunghezzaPassword === '' ||
         isNaN(this.lunghezzaPassword) ||
         this.lunghezzaPassword > 10 ||
         this.lunghezzaPassword < 4 ||
         (!this.lettere &&
-        !this.numeri &&
-        !this.simboli)) {
-         this.valido = true;        //compare subito errore,ma dopo 5 secondi scompare con riga 37
+          !this.numeri &&
+          !this.simboli)) {
+        this.valido = true;        //compare subito errore,ma dopo 5 secondi scompare con riga 37
         setTimeout(() => {
           this.valido = false;
         }, 5000);
         this.lunghezzaPassword = ""; //reset input
       } else {
-        for (let i = 0; i < this.lunghezzaPassword; i++) {
-          const valoreUnicode = this.generaNumeroRandomico();
-          if (valoreUnicode < 10) {
-            this.passwordGenerata += valoreUnicode;
-          } else {
-            this.passwordGenerata += String.fromCharCode(valoreUnicode);
+        if (this.sino === false) {
+          for (let i = 0; i < this.lunghezzaPassword; i++) {
+            let nuovoCarattere;
+            do {
+              nuovoCarattere = this.generaNumeroRandomico();
+            } while (caratteriUnici.includes(nuovoCarattere));
+            caratteriUnici.push(nuovoCarattere);
+            if (nuovoCarattere < 10) {
+              this.passwordGenerata += nuovoCarattere;
+            } else {
+              this.passwordGenerata += String.fromCharCode(nuovoCarattere);
+            }
+          }
+        } else {
+          for (let i = 0; i < this.lunghezzaPassword; i++) {
+            const valoreUnicode = this.generaNumeroRandomico();
+            if (valoreUnicode < 10) {
+              this.passwordGenerata += valoreUnicode;
+            } else {
+              this.passwordGenerata += String.fromCharCode(valoreUnicode);
+            }
           }
         }
-        console.log(`La password generata è : ${this.passwordGenerata}`);
-        this.passwordGenerata = this.passwordGenerata.join("");   //levo ogni spazio tra i caratteri della stringa
-        this.lunghezzaPassword = "";                              //reset input
+        console.log(`La password generata è: ${this.passwordGenerata}`);
       }
-      // reset();
     },
 
 
@@ -96,6 +106,7 @@ createApp({
       this.lettere = false;
       this.numeri = false;
       this.simboli = false;
+      this.sino= null;
       this.isChecked = false;
       if (this.valido = false) {
         this.valido = true;
