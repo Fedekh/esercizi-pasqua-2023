@@ -13,7 +13,7 @@ const { createApp } = Vue;
     data() {
       return {
         lunghezzaPassword:"",
-        passwordGenerata:[],
+        passwordGenerata:[],prova
     }
     },
     methods:{
