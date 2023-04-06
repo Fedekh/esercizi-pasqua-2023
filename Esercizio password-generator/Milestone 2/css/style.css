@@ -25,7 +25,6 @@
     background-color: var(--no-parameters);
     color: var(--write-no-parameters);
     padding-left: 20px;
-    opacity: 0;
 }
 
 .main{
@@ -61,19 +60,13 @@
   }
 
 .result {
-    max-width: 250px;
-    padding-inline: 20px;
-    /* height: 30px; */
-    /* border: 1px solid black; */
-    background-color: rgb(104, 175, 23);
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: white;
     margin-top: -10px;
-    word-wrap: break-word;
 }
 
 .typing{
     margin-top: 40px;
-}
-
-.hidden{
-    opacity: 1;
 }

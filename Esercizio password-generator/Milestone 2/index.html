@@ -28,29 +28,29 @@
                 </div>
 
 
-                <div :class="{ 'hidden' : valido} " class="hide rounded d-flex">
-                    <h4 class="align-self-center">Input non valido, assicurati di inserire solo un valore numerico tra 4 e 14</h4>
+                <div class="hide rounded d-flex">
+                    <h3 class="align-self-center">Nessun parametro valido</h3>
                 </div>
 
 
                 <div class="main mt-4 rounded py-4 d-flex justify-content-start">
                     <div class="left d-flex flex-column">
                         <div class="lunghezza-password">
-                            <label for="size">Inserisci la lunghezza password desiderata(max 14 car):</label>
-                            <input v-model="lunghezzaPassword" class="rounded mx-3" type="text" name="" id="size">
+                            <label for="size">Inserisci la lunghezza password desiderata:</label>
+                            <input v-model="lunghezzaPassword" class="rounded" type="text" name="" id="size">
                         </div>
-                        <!-- <p class="mt-4">Consenti ripetizioni di uno o più caratteri:</p> -->
-                        <!-- <p>Clicca cosa vuoi includere nella password:</p> -->
+                        <p class="mt-4">Consenti ripetizioni di uno o più caratteri:</p>
+                        <p>Clicca cosa vuoi includere nella password:</p>
                         <div class="btnn ">
-                            <button @click="generaPassword" type="button" class="btn btn-primary align-self">Invia</button>
-                            <button @click="reset" type="button" class="btn mx-3 btn-secondary align-self">Annulla</button>
+                            <button type="button" class="btn btn-primary align-self">Invia</button>
+                            <button type="button" class="btn mx-3 btn-secondary align-self">Annulla</button>
                         </div>
                     </div>
                     <div class="right d-flex-column">
                         <p for="">La password è :</p>
-                        <p class="result rounded">{{passwordGenerata}}</p>
+                        <p class="result rounded"></p>
                         <div class="choise d-flex flex-column justify-content-between">
-                            <!-- <div class="ripetizioni d-flex flex-column ">
+                            <div class="ripetizioni d-flex flex-column ">
                                 <div>
                                     <label for="yes">Si</label>
                                     <input type="radio" id="yes" checked>
@@ -59,12 +59,12 @@
                                     <label for="no">No</label>
                                     <input type="radio" id="no">
                                 </div>
-                            </div> -->
-                            <!-- <div class="typing">
+                            </div>
+                            <div class="typing">
                                 <label for="words">Lettere</label> <input type="checkbox" id="words"> <br>
                                 <label for="numbers">Numeri</label> <input type="checkbox" id="numbers"> <br>
                                 <label for="symbols">Simboli</label> <input type="checkbox" id="symbols">
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
