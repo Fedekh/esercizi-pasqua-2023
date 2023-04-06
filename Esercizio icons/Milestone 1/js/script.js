@@ -1,5 +1,6 @@
 // Milestone 1
-// Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
+// Partendo dalla struttura dati fornita,
+// visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 
 const { createApp } = Vue;
 
@@ -119,10 +120,11 @@ const { createApp } = Vue;
             family: 'fas',
             color: 'blue'
           }
-        ]
-        
-        
-    
+        ],
+
       }
+    },
+    methods:{
+    
     }
   }).mount('#app');

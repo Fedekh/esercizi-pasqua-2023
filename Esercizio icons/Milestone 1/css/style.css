@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(55, 56, 56);
+    background-color: rgb(93, 91, 91);
 }
 
 .wrapper {
@@ -10,7 +10,7 @@ body{
 
 header {
     width: 100%;
-    background-color: rgb(73, 76, 74);
+    background-color: rgb(57, 58, 57);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -39,8 +39,20 @@ header {
 }
 
 .container > div {
-    border: 1px solid #29B1DD;
+    /* border: 1px solid #29B1DD; */
     width: calc(100% / 5 - 20px);
     box-shadow: 10px 10px 10px 0 #a0c11b;
+    background-color: white;
+}
 
+.icone{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+i{
+    scale: 2;
 }
