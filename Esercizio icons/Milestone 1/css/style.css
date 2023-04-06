@@ -51,8 +51,8 @@ header {
     gap: 20px;
     justify-content: center;
     align-items: center;
-
 }
-i{
-    scale: 2;
+
+.icone i{
+    transform: scale(2);
 }
