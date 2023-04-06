@@ -64,10 +64,10 @@ createApp({
         isNaN(this.lunghezzaPassword) ||
         this.lunghezzaPassword > 10 ||
         this.lunghezzaPassword < 4 ||
-        !this.lettere ||
-        !this.numeri ||
-        !this.simboli) {
-        this.valido = true;        //compare subito errore,ma dopo 5 secondi scompare con riga 37
+        (!this.lettere &&
+        !this.numeri &&
+        !this.simboli)) {
+         this.valido = true;        //compare subito errore,ma dopo 5 secondi scompare con riga 37
         setTimeout(() => {
           this.valido = false;
         }, 5000);
