@@ -30,12 +30,11 @@ createApp({
 
     generaPassword() {
       this.passwordGenerata = "";
-
-      if (this.lunghezzaPassword === '' || isNaN(this.lunghezzaPassword) || this.lunghezzaPassword.length > 14 || this.lunghezzaPassword < 4) {
+      if (this.lunghezzaPassword === '' || isNaN(parseInt(this.lunghezzaPassword)) || this.lunghezzaPassword > 14 || this.lunghezzaPassword < 4) {
         this.valido = true; //compare subito errore,ma dopo 2 secondi scompare con riga 37
         setTimeout(() => {
           this.valido = false;
-        }, 2000);
+        },5000);
         this.lunghezzaPassword = ""; //reset input
       } else {
         for (let i = 0; i < this.lunghezzaPassword; i++) {

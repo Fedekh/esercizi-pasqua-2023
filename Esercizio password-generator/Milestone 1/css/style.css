@@ -75,5 +75,41 @@
 }
 
 .hidden{
-    opacity: 1;
+    /* opacity: 1; */
+    animation: nascondersi 5s ease-in;
+}
+
+@keyframes nascondersi {
+    0% {
+        opacity: .2;
+    }
+    10%{
+        opacity: .4;
+    }
+    20%{
+        opacity: .6;
+    }
+    30%{
+        opacity: .8;
+
+    }
+    40% {
+        opacity: 1;
+    }
+    60%{
+        opacity: .8;
+    }
+    70%{
+        opacity: .6;
+    }
+    80%{
+        opacity: .4;
+    }
+    90%{
+        opacity: .2;
+    }
+    100%{
+        opacity: 0;
+    }
+    
 }
