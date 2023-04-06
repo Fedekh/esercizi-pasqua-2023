@@ -71,7 +71,7 @@ createApp({
         }, 5000);
         this.lunghezzaPassword = ""; //reset input
       } else {
-        if (this.sino === false) {
+        if (this.sino === 'false') {
           for (let i = 0; i < this.lunghezzaPassword; i++) {
             let nuovoCarattere;
             do {
