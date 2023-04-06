@@ -28,42 +28,45 @@
                 </div>
 
 
-                <div class="hide rounded d-flex">
-                    <h3 class="align-self-center">Nessun parametro valido</h3>
+                <div :class="{ 'hidden' : valido} " class="hide rounded d-flex">
+                    <h4 class="align-self-center">Input non valido, assicurati di inserire solo un valore numerico tra 4 e 14, scegli anche la tipologia</h4>
                 </div>
 
 
                 <div class="main mt-4 rounded py-4 d-flex justify-content-start">
                     <div class="left d-flex flex-column">
                         <div class="lunghezza-password">
-                            <label for="size">Inserisci la lunghezza password desiderata:</label>
-                            <input v-model="lunghezzaPassword" class="rounded" type="text" name="" id="size">
+                            <label for="size">Inserisci la lunghezza password desiderata(max 10 car):</label>
+                            <input v-model="lunghezzaPassword" class="rounded mx-3" type="text" name="" id="size">
                         </div>
                         <p class="mt-4">Consenti ripetizioni di uno o più caratteri:</p>
                         <p>Clicca cosa vuoi includere nella password:</p>
                         <div class="btnn ">
-                            <button type="button" class="btn btn-primary align-self">Invia</button>
-                            <button type="button" class="btn mx-3 btn-secondary align-self">Annulla</button>
+                            <button @click="generaPassword" type="button" class="btn btn-primary align-self">Invia</button>
+                            <button @click="reset" type="button" class="btn mx-3 btn-secondary align-self">Annulla</button>
                         </div>
                     </div>
                     <div class="right d-flex-column">
                         <p for="">La password è :</p>
-                        <p class="result rounded"></p>
+                        <p class="result rounded">{{passwordGenerata}}</p>
                         <div class="choise d-flex flex-column justify-content-between">
-                            <div class="ripetizioni d-flex flex-column ">
-                                <div>
-                                    <label for="yes">Si</label>
-                                    <input type="radio" id="yes" checked>
+                            <div class="ripetizioni d-flex flex-column">
+                                <div class="yes">
+                                <label for="yes">Si</label>
+                                <input v-model="si" type="radio" name="scelta" id="yes" value="si" >
                                 </div>
-                                <div>
+                                <!--entrambi gli input avranno lo stesso nome "ripetizioni", ma valori diversi: "si" per il primo input e "no" per il secondo input.
+                                 in questo modo, quando uno dei due radio button viene selezionato, l'altro diventa automaticamente deselezionato.-->
+                                <div class="no">
                                     <label for="no">No</label>
-                                    <input type="radio" id="no">
+                                    <input v-model="no" type="radio" name="scelta" id="no" value="no">
                                 </div>
                             </div>
+                              
                             <div class="typing">
-                                <label for="words">Lettere</label> <input type="checkbox" id="words"> <br>
-                                <label for="numbers">Numeri</label> <input type="checkbox" id="numbers"> <br>
-                                <label for="symbols">Simboli</label> <input type="checkbox" id="symbols">
+                                <label for="words">Lettere</label> <input @click="click" :checked="isChecked" v-model="lettere" type="checkbox" id="words"> <br>
+                                <label for="numbers">Numeri</label> <input @click="click" :checked="isChecked" v-model="numeri" type="checkbox" id="numbers"> <br>
+                                <label for="symbols">Simboli</label> <input @click="click" :checked="isChecked" v-model="simboli" type="checkbox" id="symbols">
                             </div>
                         </div>
                     </div>

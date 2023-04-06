@@ -5,6 +5,7 @@
    --write-no-parameters:#0F5672;
 }
 
+
 .wrapper{
     height: 100vh;
     width: 100%;
@@ -25,11 +26,12 @@
     background-color: var(--no-parameters);
     color: var(--write-no-parameters);
     padding-left: 20px;
+    opacity: 0;
 }
 
 .main{
     background-color: antiquewhite;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 0 20px;
     height: 70%;
     display: inline;
@@ -54,19 +56,70 @@
     justify-content: space-start;
     gap: 20px;
   }
+
+  .choise {    
+      position: fixed;  
+      bottom: 20%; 
+      /* cosi alla comparsa della password il contenitore non si sposta */
+  }
   
   #yes {
     margin-left: 8px;
   }
 
 .result {
-    width: 250px;
-    height: 30px;
-    border: 1px solid black;
-    background-color: white;
+    max-width: 250px;
+    padding-inline: 20px;
+    /* height: 30px; */
+    /* border: 1px solid black; */
+    background-color: rgb(104, 175, 23);
     margin-top: -10px;
+    word-wrap: break-word;
+}
+
+.ripetizioni{
+    margin: 30px 0;
 }
 
 .typing{
     margin-top: 40px;
+}
+
+.hidden{
+    animation: nascondersi 5s ease-in;
+}
+
+@keyframes nascondersi {
+    0% {
+        opacity: .2;
+    }
+    10%{
+        opacity: .4;
+    }
+    20%{
+        opacity: .6;
+    }
+    30%{
+        opacity: .8;
+
+    }
+    40% {
+        opacity: 1;
+    }
+    60%{
+        opacity: .8;
+    }
+    70%{
+        opacity: .6;
+    }
+    80%{
+        opacity: .4;
+    }
+    90%{
+        opacity: .2;
+    }
+    100%{
+        opacity: 0;
+    }
+    
 }
