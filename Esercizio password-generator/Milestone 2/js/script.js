@@ -60,7 +60,7 @@ createApp({
       let caratteriUnici = [];
       if (this.lunghezzaPassword === '' ||
         isNaN(this.lunghezzaPassword) ||
-        this.lunghezzaPassword > 10 ||
+        this.lunghezzaPassword > 14 ||
         this.lunghezzaPassword < 4 ||
         (!this.lettere &&
           !this.numeri &&
@@ -96,6 +96,7 @@ createApp({
         }
         console.log(`La password generata è: ${this.passwordGenerata}`);
       }
+      
     },
 
 
@@ -115,3 +116,4 @@ createApp({
 
   }
 }).mount('#app');
+
