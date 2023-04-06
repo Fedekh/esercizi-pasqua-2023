@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(67, 71, 69);
+    background-color: rgb(55, 56, 56);
 }
 
 .wrapper {
@@ -10,7 +10,7 @@ body{
 
 header {
     width: 100%;
-    background-color: rgb(67, 71, 69);
+    background-color: rgb(73, 76, 74);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -40,5 +40,7 @@ header {
 
 .container > div {
     border: 1px solid #29B1DD;
-    width: calc(100% / 5 );
+    width: calc(100% / 5 - 20px);
+    box-shadow: 10px 10px 10px 0 #a0c11b;
+
 }
