@@ -123,6 +123,7 @@ createApp({
           color: 'blue'
         }
       ],
+      
       choice: '',              // all, animal, vegetable, user
       arrayFiltrato: [],
       colorGenerated: '',     //per bonus 1
@@ -192,7 +193,6 @@ createApp({
   },
 
 }).mount('#app');
-//  Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
 
 

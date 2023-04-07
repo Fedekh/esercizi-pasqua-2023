@@ -36,6 +36,7 @@ header {
     flex-wrap: wrap;
     padding-top: 20px;
     gap: 20px;
+    align-content: flex-start;
 }
 
 .container > div {
@@ -43,7 +44,8 @@ header {
     width: calc(100% / 5 - 20px);
     box-shadow: 10px 10px 10px 0 #a0c11b;
     background-color: rgb(50, 35, 35);
-    max-height: 150px;
+    height: 150px;
+
 }
 
 .icone{
